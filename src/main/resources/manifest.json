@@ -1,13 +1,13 @@
 {
     "Group": "HytaleModding",
     "Name": "ExamplePlugin",
-    "Version": "0.0.0",
-    "Description": "Description of your plugin",
+    "Version": "0.1.0",
+    "Description": "Adds hip pouches that permanently expand player inventory slots. Up to 6 per player.",
     "Authors": [
         {
-            "Name": "Your Name",
-            "Email": "your.email@example.com",
-            "Url": "https://your-website.com"
+            "Name": "Nithin Rajesh",
+            "Email": "rajeshnithin2305@gmail.com",
+            "Url": "https://nrajesh2305.netlify.app"
         }
     ],
     "Website": "https://your-plugin-website.com",
