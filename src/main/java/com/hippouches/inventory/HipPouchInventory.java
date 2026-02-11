@@ -1,42 +1,35 @@
 package com.hippouches.inventory;
 
+import com.hippouches.data.HipPouchManager;
+
+import java.util.UUID;
+
 public class HipPouchInventory {
-    
+
     public static final int BASE_ROWS = 4;
     public static final int SLOTS_PER_ROW = 9;
     public static final int SLOTS_PER_POUCH = 3;
 
-    private final int pouchCount;
+    private final HipPouchManager pouchManager;
 
-    public HipPouchInventory(int pouchCount)
-    {
-        this.pouchCount = Math.max(0, pouchCount);
+    public HipPouchInventory(HipPouchManager pouchManager) {
+        this.pouchManager = pouchManager;
     }
 
-    public int getExtraSlots()
-    {
-        return pouchCount * SLOTS_PER_POUCH;
-    }
-
-    public int getTotalSlots()
-    {
-        return getBaseSlots() + getExtraSlots();
-    }
-
-    public int getBaseSlots()
-    {
+    public int getBaseSlots() {
         return BASE_ROWS * SLOTS_PER_ROW;
     }
 
-    public int getTotalRows()
-    {
-        int extraRows = (int) Math.ceil(getExtraSlots() / (double) SLOTS_PER_ROW);
-        return BASE_ROWS + extraRows;
+    public int getExtraSlots(UUID playerId) {
+        int pouchCount = pouchManager.getPouchCount(playerId);
+        return pouchCount * SLOTS_PER_POUCH;
     }
 
-    public boolean isPouchSlot(int slotIndex)
-    {
-        return slotIndex < getExtraSlots();
+    public int getTotalSlots(UUID playerId) {
+        return getBaseSlots() + getExtraSlots(playerId);
+    }
+
+    public int getTotalRows(UUID playerId) {
+        return getTotalSlots(playerId) / SLOTS_PER_ROW;
     }
 }
-

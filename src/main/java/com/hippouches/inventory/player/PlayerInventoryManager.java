@@ -21,15 +21,14 @@ public class PlayerInventoryManager {
         return inventoryStates.computeIfAbsent(playerId, id -> 
         {
             int pouchCount = pouchManager.getPouchCount(id);
-            return new PlayerInventoryState(id, pouchCount);
+            return new PlayerInventoryState(id, pouchManager);
         });
     }
 
     public void refreshInventory(UUID playerId)
     {
         int pouchCount = pouchManager.getPouchCount(playerId);
-        inventoryStates.put(playerId, new PlayerInventoryState(playerId, pouchCount));
-
+        inventoryStates.put(playerId, new PlayerInventoryState(playerId, pouchManager));
     }
 
     public void removePlayer(UUID playerId)
