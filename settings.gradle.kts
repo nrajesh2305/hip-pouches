@@ -1,4 +1,4 @@
-rootProject.name = "dev.hytalemodding"
+rootProject.name = "hip-pouches"
 
 plugins {
     // See documentation on https://scaffoldit.dev
@@ -22,7 +22,7 @@ hytale {
 
     manifest {
         Group = "HytaleModding"
-        Name = "ExamplePlugin"
-        Main = "dev.hytalemodding.ExamplePlugin"
+        Name = "HipPouches"
+        Main = "dev.hytalemodding.HipPouchesPlugin"
     }
 }

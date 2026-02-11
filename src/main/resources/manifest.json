@@ -1,5 +1,5 @@
 {
-    "Group": "com.hippouches",
+    "Group": "HytaleModding",
     "Name": "HipPouches",
     "Version": "0.1.0",
     "Description": "Adds hip pouches that permanently expand player inventory slots. Up to 6 per player.",
@@ -15,5 +15,5 @@
     "Dependencies": {},
     "OptionalDependencies": {},
     "ServerVersion": "*",
-    "Main": "com.hippouches.HipPouchesPlugin"
+    "Main": "dev.hytalemodding.HipPouchesPlugin"
 }
